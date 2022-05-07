@@ -63,6 +63,9 @@ struct BiometricsFingerprint : public IBiometricsFingerprint {
     Return<void> onFingerDown(uint32_t x, uint32_t y, float minor, float major) override;
     Return<void> onFingerUp() override;
 
+    Return<void> onShowUdfpsOverlay() override;
+    Return<void> onHideUdfpsOverlay() override;
+
   private:
     static fingerprint_device_t* openHal(const char* class_name);
     static void notify(
